@@ -110,6 +110,17 @@ blog.get("/bulk", async (c) => {
       where:{
         published: true
       },
+      select:{
+        id:true,
+        title:true,
+        content:true,
+        author:{
+          select:{
+            name:true,
+            email:true
+          }
+        }
+      }
     });
     
     return c.json( blog,
@@ -131,6 +142,17 @@ blog.get("/:id", async (c) => {
       where:{
         id
       },
+      select:{
+        id:true,
+        title:true,
+        content:true,
+        author:{
+          select:{
+            name:true,
+            email:true
+          }
+        }
+      }
     });
     
     return c.json( blog,
