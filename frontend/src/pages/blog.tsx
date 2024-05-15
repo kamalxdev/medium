@@ -1,6 +1,7 @@
 import axios from "axios";
 import { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BlogSkeleton } from "../components/skeleton/blog";
 
 
 
@@ -35,10 +36,10 @@ export function Blog() {
     });
   },[])
   if(loading){
-    return <div>Loading...</div>
+    return <BlogSkeleton/>
   }
   return (
-    <div>
+    <div >
       <div className="max-w-7xl px-4 rounded-md md:mx-44">
 
         <div className="flex flex-col gap-6 gap-y-10 py-6">

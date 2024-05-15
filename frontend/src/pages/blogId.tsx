@@ -1,6 +1,7 @@
 import axios from "axios";
 import { memo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import BlogIdSkeleton from "../components/skeleton/blogId";
 
 type iblog = {
   author: {
@@ -34,7 +35,7 @@ function BlogId() {
       });
   }, [id]);
   if (loading) {
-    return <div>Loading...</div>;
+    return <BlogIdSkeleton />
   }
   return (
     <div>

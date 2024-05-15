@@ -14,7 +14,9 @@ const app = new Hono<{
 }>();
 
 
-app.use('/*',cors())
+app.use('/*',cors(
+  {origin: '*'}
+))
 app.get("/", (c) => {
   return c.text("Hello Hono! from HOmepage");
 });
