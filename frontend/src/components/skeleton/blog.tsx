@@ -1,6 +1,5 @@
 
-import { memo,} from "react";
-import { Link } from "react-router-dom";
+import { memo} from "react";
 
 
 
@@ -10,9 +9,8 @@ export function BlogSkeleton() {
     <div className="animate-pulse">
       <div className="max-w-7xl px-4 rounded-md md:mx-44">
         <div className="flex flex-col gap-6 gap-y-10 py-6">
-          {post.map((post,index) => (
+          {post.map(() => (
             <Post
-              key={index}
             />
           ))}
         </div>
